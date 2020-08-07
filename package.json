@@ -7,12 +7,13 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon",
     "react-dev": "webpack -d --watch",
     "lint": "eslint"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "mongoose": "^5.9.28",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -32,7 +33,7 @@
     "webpack-cli": "^3.3.12"
   },
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "server/server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/6tacoseach/amazeon-videos.git"
