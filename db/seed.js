@@ -48,7 +48,7 @@ const videoData = [
     title: "Destroy All Humans Review 'Buy, Wait for Sale, Rent, Never Touch?'",
     duration: "16:40",
     author: "ACG",
-    thumbnail: "https://www.youtube.com/watch?v=vKXUQKkx7mo&list=PL62tz83FJJjlP-rz4qKNts3Kwf3iwhbpG&index=2&t=0s"
+    thumbnail: "https://i.ytimg.com/vi/vKXUQKkx7mo/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLBrOOwJfBc1ad71Adn59k-txSEt4g"
   }, {
     url: "https://www.youtube.com/embed/TEpCzZyvN54",
     title: "Ghost of Tsushima Give It Your Review - Your Voice",
