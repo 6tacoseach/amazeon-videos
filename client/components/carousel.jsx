@@ -1,8 +1,7 @@
 import React from 'react';
+import axios from 'axios';
 import CarouselCard from './carousel-card.jsx';
 import VideoModal from './modal.jsx';
-
-const axios = require('axios');
 
 export default class VideoCarousel extends React.Component {
   constructor(props) {
