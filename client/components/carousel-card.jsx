@@ -1,9 +1,9 @@
 import React from 'react';
 
 function CarouselCard(props) {
-  const { video } = props;
+  const { video, handleClick, cardId } = props;
   return (
-    <li>
+    <li id={cardId} onClick={handleClick}>
       <img src={video.thumbnail} alt="" />
       <p>{video.duration}</p>
       <p>{video.title}</p>
