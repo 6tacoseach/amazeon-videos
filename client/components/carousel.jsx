@@ -1,14 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 import CarouselCard from './carousel-card.jsx';
-import VideoModal from './modal.jsx';
+import VideoModal from './video-modal.jsx';
 
 export default class VideoCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       videoData: [],
-      selectedVideoId: '',
+      selectedVideo: {},
     };
     this.handleCardClick = this.handleCardClick.bind(this);
   }
@@ -29,20 +29,27 @@ export default class VideoCarousel extends React.Component {
   }
 
   handleCardClick(event) {
-    console.log(event.target);
-    this.setState({
-      selectedVideoId: event.target.id,
-    });
+    // console.log(event.target);
+    // this.setState({
+    //   selectedVideoId: event.target.id,
+    // });
+    const { videoData } = this.state;
+    for (let i = 0; i < videoData.length; i += 1) {
+      if (event.target.id === videoData[i]._id) {
+        this.setState({
+          selectedVideo: videoData[i],
+        });
+      }
+    }
   }
 
   render() {
-    const { videoData, selectedVideoId } = this.state;
-    let cardId = 0;
-    const cards = videoData.map((video) => <CarouselCard key={video._id} cardId={cardId++} video={video} handleClick={this.handleCardClick} />);
+    const { videoData, selectedVideo } = this.state;
+    const cards = videoData.map((video) => <CarouselCard key={video._id} cardId={video._id} video={video} handleClick={this.handleCardClick} />);
     return (
       <div>
         <ul>
-          <VideoModal vid={videoData[selectedVideoId]} />
+          <VideoModal vid={selectedVideo} />
           {cards}
         </ul>
       </div>
