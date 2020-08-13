@@ -8,9 +8,10 @@ export default class VideoCarousel extends React.Component {
     super(props);
     this.state = {
       videoData: [],
-      selectedVideo: {},
+      selectedVideo: null,
     };
     this.handleCardClick = this.handleCardClick.bind(this);
+    this.handleModalClose = this.handleModalClose.bind(this);
   }
 
   componentDidMount() {
@@ -29,10 +30,6 @@ export default class VideoCarousel extends React.Component {
   }
 
   handleCardClick(event) {
-    // console.log(event.target);
-    // this.setState({
-    //   selectedVideoId: event.target.id,
-    // });
     const { videoData } = this.state;
     for (let i = 0; i < videoData.length; i += 1) {
       if (event.target.id === videoData[i]._id) {
@@ -43,13 +40,22 @@ export default class VideoCarousel extends React.Component {
     }
   }
 
+  handleModalClose() {
+    this.setState({
+      selectedVideo: null,
+    });
+  }
+
   render() {
     const { videoData, selectedVideo } = this.state;
-    const cards = videoData.map((video) => <CarouselCard key={video._id} cardId={video._id} video={video} handleClick={this.handleCardClick} />);
+    const generateCards = (video) => {
+      return <CarouselCard key={video._id} cardId={video._id} video={video} handleClick={this.handleCardClick} />
+    };
+    const cards = videoData.map(generateCards);
     return (
       <div>
         <ul>
-          <VideoModal vid={selectedVideo} />
+          {selectedVideo ? <VideoModal close={this.handleModalClose} vid={selectedVideo} /> : null}
           {cards}
         </ul>
       </div>
