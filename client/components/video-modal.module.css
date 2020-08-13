@@ -1,0 +1,7 @@
+.loaded {
+  visibility: visible;
+}
+
+.notLoaded {
+  visibility: hidden;
+}
