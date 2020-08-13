@@ -11,7 +11,7 @@
     "react-dev": "webpack -d --watch",
     "lint": "eslint",
     "seed": "node db/seed.js",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "axios": "^0.19.2",
