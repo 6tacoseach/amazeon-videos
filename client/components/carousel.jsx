@@ -51,7 +51,7 @@ export default class VideoCarousel extends React.Component {
     const cards = videoData.map(generateCards);
     return (
       <div>
-        <ul>
+        <ul className={classes.carousel}>
           {selectedVideo ? <VideoModal close={this.handleModalClose} vid={selectedVideo} /> : null}
           {cards}
         </ul>
