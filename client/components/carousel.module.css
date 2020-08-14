@@ -1,0 +1,9 @@
+.modalOpen {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+}
