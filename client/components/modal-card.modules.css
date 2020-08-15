@@ -1,0 +1,45 @@
+.card {
+  display: grid;
+  grid-template: 81px / 120px 220px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  width: auto;
+  margin-top: 5px;
+}
+
+.thumbnail {
+  grid-area: 1 / 1 / span 1 / span 1;
+  width: 120px;
+  height: 81px;
+  object-fit: contain;
+  background: black;
+  align-self: center;
+}
+
+.duration {
+  grid-area: 1 / 1 / span 1 / span 1;
+  align-self: end;
+  justify-self: end;
+  background-color: black;
+  color: white;
+  z-index: 11;
+  height: 15px;
+  width: 30px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.videoInfo {
+  grid-area: 1 / 2 / span 1 / span 1;
+  margin-left: 5px;
+}
+
+.title {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.author {
+  font-size: 11px;
+}

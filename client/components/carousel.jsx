@@ -38,21 +38,24 @@ export default class VideoCarousel extends React.Component {
     document.body.className = classes.modalOpen;
   }
 
-  handleModalClose() {
-    this.setState({
-      selectedVideo: null,
-    });
-    document.body.className = '';
+  handleModalClose(event) {
+    if (event.target.id === 'modalBackground') {
+      this.setState({
+        selectedVideo: null,
+      });
+      document.body.className = '';
+    }
   }
 
   render() {
     const { videoData, selectedVideo } = this.state;
     const generateCards = (video, index) => <CarouselCard key={video._id} cardId={index} video={video} handleClick={this.handleCardClick} />;
     const cards = videoData.map(generateCards);
+
     return (
       <div>
         <ul className={classes.carousel}>
-          {selectedVideo ? <VideoModal close={this.handleModalClose} vid={selectedVideo} /> : null}
+          {selectedVideo ? <VideoModal close={this.handleModalClose} vid={selectedVideo} vidList={videoData} /> : null}
           {cards}
         </ul>
       </div>
