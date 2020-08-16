@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import ModalCard from './modal-card.jsx';
+import VideoInfo from './video-modal-info.jsx';
 import classes from './video-modal.module.css';
 
 function VideoModal(props) {
@@ -17,6 +18,7 @@ function VideoModal(props) {
     <div onClick={close} role="presentation" className={classes.modalBackground} id="modalBackground">
       <div className={classes.modalWindow}>
         {vidShown}
+        <VideoInfo vid={vid} />
         <div className={classes.videoList}>
           {vidListCards}
         </div>
