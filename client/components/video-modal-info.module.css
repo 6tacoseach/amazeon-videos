@@ -1,0 +1,33 @@
+.videoInfo {
+  grid-area: 2 / 1 / span 1 / span 1;
+  font-family: Arial, sans-serif;
+}
+
+.likeBar {
+  background: #EEE;
+  width: 502px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  height: 30px;
+  font-size: 13px;
+}
+
+.likeText {
+  margin-left: 5px;
+}
+
+.share {
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.title {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.author {
+  font-size: 10px;
+  margin-top: 15px;
+}
