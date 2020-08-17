@@ -10,11 +10,22 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use('/:productId', express.static(path.join(__dirname, '../public')));
 
 app.get('/video/:productId', (req, res) => {
-  db.Video.find({ productId: req.params.productId }, (err, videoData) => {
+  const { productId } = req.params;
+  const allVideos = [];
+  db.Video.find({ productId }, (err, videoData) => {
     if (err) {
       console.error('Error retrieving video data', err);
     } else {
-      res.send(videoData);
+      const { category } = videoData[0];
+      allVideos.push(videoData);
+      db.Video.find({ category, productId: { $ne: productId } }, (err, relatedVideos) => {
+        if (err) {
+          console.error('Error retrieving related video data', err);
+        } else {
+          allVideos.push(relatedVideos);
+          res.send(allVideos);
+        }
+      });
     }
   });
 });
