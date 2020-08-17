@@ -6,4 +6,9 @@
 .carousel {
   display: flex;
   flex-direction: row;
+  overflow: hidden;
+  width: 80vw;
+  margin-left: 10vw;
+  scroll-behavior: smooth;
+  padding: 0;
 }

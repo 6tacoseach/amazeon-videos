@@ -1,6 +1,6 @@
 .card {
   display: grid;
-  width: 200px;
+  min-width: 200px;
   grid-template: repeat(5, 40px) / repeat(5, 1fr);
   margin-bottom: 20px;
   border: solid 1px #d3d3d3;
