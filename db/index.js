@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/videos');
-const Schema = mongoose.Schema;
+
+mongoose.connect('mongodb://database/videos');
+const { Schema } = mongoose;
 
 const videoSchema = new Schema({
   title: String,
@@ -11,7 +12,7 @@ const videoSchema = new Schema({
   likes: Number,
   dislikes: Number,
   productId: Number,
-  category: String
+  category: String,
 });
 
 const Video = mongoose.model('Video', videoSchema);
