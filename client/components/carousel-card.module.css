@@ -7,7 +7,7 @@
   border-radius: 10px;
   overflow: hidden;
   font-family: Arial, sans-serif;
-  margin-right: 15px;
+  margin-right: 30px;
 }
 
 .playButton {
@@ -23,6 +23,23 @@
 .playButtonHovered {
   composes: playButton;
   opacity: 1;
+}
+
+.playIcon {
+  grid-area: 2 / 3 / span 1 / span 1;
+  z-index: 2;
+  color: gray;
+}
+
+.playIconBackground {
+  grid-area: 2 / 3 / span 1 / span 1;
+  z-index: 1;
+  height: 90%;
+  width:70%;
+  border-radius: 50%;
+  background: white;
+  align-self: center;
+  justify-self: center;
 }
 
 .thumbnail {

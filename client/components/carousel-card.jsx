@@ -12,6 +12,8 @@ function CarouselCard(props) {
     <li onMouseOver={addHover} onFocus={addHover} onMouseLeave={removeHover} className={classes.card}>
       <input className={isHovered ? classes.playButtonHovered : classes.playButton} type="button" value="Click to play video" id={cardId} onClick={handleClick} />
       <img src={video.thumbnail} alt="" className={isHovered ? classes.thumbnailHovered : classes.thumbnail} />
+      <span className={isHovered ? '' : classes.playIconBackground} />
+      <i className={isHovered ? '' : `${classes.playIcon} fas fa-play-circle fa-3x`} />
       <div className={isHovered ? classes.durationHovered : classes.duration}>
         <span className={classes.durationText}>
           {video.duration}

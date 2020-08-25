@@ -13,12 +13,40 @@
   z-index: 10;
 }
 
+.modalFrame {
+  background: white;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  height: 30px;
+}
+
+.modalTitle {
+  border-left: 1px solid black;
+  margin-left: 15px;
+  padding-left: 15px;
+  font-size: 18px;
+}
+
+.modalClose {
+  color: gray;
+}
+
+.modalClose:hover {
+  cursor: pointer;
+}
+
 .modalWindow {
   background-color: white;
   height: auto;
   width: auto;
   max-width: 1000px;
-  min-height: 450px;
+  height: 450px;
   display: grid;
   grid-template: 3fr 1fr 1fr / 1.5fr 1fr;
   gap: 0;
@@ -37,4 +65,20 @@
 
 .videoList {
   grid-area: 1 / 2 / span 3 / span 1;
+  overflow: scroll;
+}
+
+.vidListHeader {
+  background: #EEE;
+  font-size: 14px;
+  font-weight: bold;
+  position: sticky;
+  width: 100%;
+  height: 30px;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  border-radius: 5px;
 }
